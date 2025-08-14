@@ -38,6 +38,8 @@ DECLARE_INFINIOP_TEST(gelu)
 DECLARE_INFINIOP_TEST(gelu_backward)
 DECLARE_INFINIOP_TEST(cross_entropy_loss_backward)
 
+DECLARE_INFINIOP_TEST(layer_norm)
+
 #define REGISTER_INFINIOP_TEST(name)                      \
     {                                                     \
         #name,                                            \
@@ -85,7 +87,8 @@ DECLARE_INFINIOP_TEST(cross_entropy_loss_backward)
         REGISTER_INFINIOP_TEST(gelu)                        \
         REGISTER_INFINIOP_TEST(gelu_backward)               \
         REGISTER_INFINIOP_TEST(cross_entropy_loss_backward) \
-    }
+        REGISTER_INFINIOP_TEST(layer_norm)
+}
 
 namespace infiniop_test {
 
