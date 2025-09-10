@@ -22,6 +22,8 @@ def run_tests(args):
         "rearrange.py",
         "rms_norm.py",
         "rope.py",
+        "2dmrope.py",
+        "3dmrope.py",
         "sub.py",
         "swiglu.py",
         "softplus.py",
@@ -48,7 +50,7 @@ def run_tests(args):
         "cross_entropy_loss_backward.py",
     ]:
         result = subprocess.run(
-            f"python {test} {args} --debug", text=True, encoding="utf-8", shell=True
+            f"python3 {test} {args} --debug", text=True, encoding="utf-8", shell=True
         )
         if result.returncode != 0:
             failed.append(test)

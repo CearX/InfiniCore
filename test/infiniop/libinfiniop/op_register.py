@@ -291,7 +291,8 @@ def rearrange_(lib):
     ]
 
     lib.infiniopDestroyRearrangeDescriptor.restype = c_int32
-    lib.infiniopDestroyRearrangeDescriptor.argtypes = [infiniopOperatorDescriptor_t]
+    lib.infiniopDestroyRearrangeDescriptor.argtypes = [
+        infiniopOperatorDescriptor_t]
 
 
 @OpRegister.operator
@@ -383,6 +384,84 @@ def rope_(lib):
 
     lib.infiniopDestroyRoPEDescriptor.restype = c_int32
     lib.infiniopDestroyRoPEDescriptor.argtypes = [
+        infiniopOperatorDescriptor_t,
+    ]
+
+
+@OpRegister.operator
+def mrope2d_(lib):
+    lib.infiniopCreateMRoPE2DDescriptor.restype = c_int32
+    lib.infiniopCreateMRoPE2DDescriptor.argtypes = [
+        infiniopHandle_t,
+        POINTER(infiniopOperatorDescriptor_t),
+        infiniopTensorDescriptor_t,
+        infiniopTensorDescriptor_t,
+        infiniopTensorDescriptor_t,
+        infiniopTensorDescriptor_t,
+        infiniopTensorDescriptor_t,
+    ]
+
+    lib.infiniopGetMRoPE2DWorkspaceSize.restype = c_int32
+    lib.infiniopGetMRoPE2DWorkspaceSize.argtypes = [
+        infiniopOperatorDescriptor_t,
+        POINTER(c_size_t),
+    ]
+
+    lib.infiniopMRoPE2D.restype = c_int32
+    lib.infiniopMRoPE2D.argtypes = [
+        infiniopOperatorDescriptor_t,
+        c_void_p,
+        c_size_t,
+        c_void_p,
+        c_void_p,
+        c_void_p,
+        c_void_p,
+        c_void_p,
+        c_void_p,
+    ]
+
+    lib.infiniopDestroyMRoPE2DDescriptor.restype = c_int32
+    lib.infiniopDestroyMRoPE2DDescriptor.argtypes = [
+        infiniopOperatorDescriptor_t,
+    ]
+
+
+@OpRegister.operator
+def mrope3d_(lib):
+    lib.infiniopCreateMRoPE3DDescriptor.restype = c_int32
+    lib.infiniopCreateMRoPE3DDescriptor.argtypes = [
+        infiniopHandle_t,
+        POINTER(infiniopOperatorDescriptor_t),
+        infiniopTensorDescriptor_t,
+        infiniopTensorDescriptor_t,
+        infiniopTensorDescriptor_t,
+        infiniopTensorDescriptor_t,
+        infiniopTensorDescriptor_t,
+        infiniopTensorDescriptor_t,
+    ]
+
+    lib.infiniopGetMRoPE3DWorkspaceSize.restype = c_int32
+    lib.infiniopGetMRoPE3DWorkspaceSize.argtypes = [
+        infiniopOperatorDescriptor_t,
+        POINTER(c_size_t),
+    ]
+
+    lib.infiniopMRoPE3D.restype = c_int32
+    lib.infiniopMRoPE3D.argtypes = [
+        infiniopOperatorDescriptor_t,
+        c_void_p,
+        c_size_t,
+        c_void_p,
+        c_void_p,
+        c_void_p,
+        c_void_p,
+        c_void_p,
+        c_void_p,
+        c_void_p,
+    ]
+
+    lib.infiniopDestroyMRoPE3DDescriptor.restype = c_int32
+    lib.infiniopDestroyMRoPE3DDescriptor.argtypes = [
         infiniopOperatorDescriptor_t,
     ]
 
@@ -491,8 +570,6 @@ def swiglu_(lib):
     ]
 
 
-
-
 @OpRegister.operator
 def conv_(lib):
     lib.infiniopCreateConvDescriptor.restype = c_int32
@@ -528,8 +605,8 @@ def conv_(lib):
     lib.infiniopDestroyConvDescriptor.argtypes = [
         infiniopOperatorDescriptor_t,
     ]
-    
-    
+
+
 @OpRegister.operator
 def sigmoid_(lib):
     lib.infiniopCreateSigmoidDescriptor.restype = c_int32
@@ -581,7 +658,7 @@ def topksoftmax_(lib):
         c_void_p,
         c_void_p,
         c_size_t,
-        c_bool , 
+        c_bool,
         c_void_p,
     ]
     lib.infiniopDestroyTopksoftmaxDescriptor.restype = c_int32
@@ -800,7 +877,8 @@ def hardswish_(lib):
         c_void_p,
     ]
     lib.infiniopDestroyHardSwishDescriptor.restype = c_int32
-    lib.infiniopDestroyHardSwishDescriptor.argtypes = [infiniopOperatorDescriptor_t]
+    lib.infiniopDestroyHardSwishDescriptor.argtypes = [
+        infiniopOperatorDescriptor_t]
 
 
 @OpRegister.operator
@@ -1173,4 +1251,5 @@ def softplus_(lib):
         c_void_p,
     ]
     lib.infiniopDestroySoftplusDescriptor.restype = c_int32
-    lib.infiniopDestroySoftplusDescriptor.argtypes = [infiniopOperatorDescriptor_t]
+    lib.infiniopDestroySoftplusDescriptor.argtypes = [
+        infiniopOperatorDescriptor_t]

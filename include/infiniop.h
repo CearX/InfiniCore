@@ -15,6 +15,8 @@
 #include "infiniop/ops/relu.h"
 #include "infiniop/ops/rms_norm.h"
 #include "infiniop/ops/rope.h"
+#include "infiniop/ops/2dmrope.h"
+#include "infiniop/ops/3dmrope.h"
 #include "infiniop/ops/rope_v2.h"
 #include "infiniop/ops/softplus.h"
 #include "infiniop/ops/sub.h"
