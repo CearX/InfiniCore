@@ -35,6 +35,7 @@
 #include "infiniop/ops/sigmoid_backward.h"
 #include "infiniop/ops/silu.h"
 #include "infiniop/ops/sin.h"
+#include "infiniop/ops/softmax.h"
 #include "infiniop/ops/softplus.h"
 #include "infiniop/ops/sub.h"
 #include "infiniop/ops/swiglu.h"
